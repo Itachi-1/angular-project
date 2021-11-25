@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent
   ],
+  // 模块化开发，其他的模块统一引入到这里来
   imports: [
     CoreModule
   ],

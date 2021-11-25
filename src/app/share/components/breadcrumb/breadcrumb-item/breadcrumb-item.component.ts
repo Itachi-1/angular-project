@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Optional, TemplateRef } from '@angular/core';
+import { BreadcrumbComponent } from '../breadcrumb.component';
 
 @Component({
   selector: 'xm-breadcrumb-item',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb-item.component.scss']
 })
 export class BreadcrumbItemComponent implements OnInit {
-
-  constructor() { }
+  // 注入他的父级元素，以调用其属性或方法
+  constructor(@Optional() readonly parent:BreadcrumbComponent) { }
 
   ngOnInit(): void {
   }
