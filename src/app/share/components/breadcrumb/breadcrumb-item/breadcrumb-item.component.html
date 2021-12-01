@@ -4,10 +4,7 @@
     </div>
     <div class="separator">
         <!-- 获取父级传入的xmSeparator值，没有则默认展示defSpearatorTpl模板  '>' -->
-        <!-- ngTemplateOutlet的作用?? -->
-        <ng-container [ngTemplateOutlet]="parent.xmSeparator || defSpearatorTpl"></ng-container>
-        <ng-template #defSpearatorTpl>
-            <span class="separator">&gt;</span>
-        </ng-template>
+        <!-- xmStrTplOutlet结构性指令 -->
+        <ng-container *xmStrTplOutlet="parent.xmSeparator"> {{parent.xmSeparator}} </ng-container>
     </div>
   </div>
