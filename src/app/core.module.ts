@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './layouts/header/header.component';
 import { BreadcrumbModule } from './share/components/breadcrumb/breadcrumb.module';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { BreadcrumbModule } from './share/components/breadcrumb/breadcrumb.modul
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CommonModule,
     BreadcrumbModule
@@ -18,11 +20,12 @@ import { BreadcrumbModule } from './share/components/breadcrumb/breadcrumb.modul
   // 外部需要使用的组件或模块需要导出
   exports: [
     HeaderComponent,
-    BreadcrumbModule
+    BreadcrumbModule,
+    BrowserModule
   ]
 })
-export class CoreModule { 
-  // 两个方法暂时不知道具体作用，跳过自己
+export class CoreModule {
+  // 跳过自己，可选依赖
   constructor(@SkipSelf() @Optional() parentModule:CoreModule) {
     if (parentModule) {
       throw new Error('CoreModule只能被AppModule引入');
